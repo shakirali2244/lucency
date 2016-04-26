@@ -151,6 +151,7 @@ public class CrawlEng {
 			while(current.isToCrawl() == -1){System.out.println("waiting... ");}
 			if(current.isToCrawl() == 1){
 				crawlThread p = new crawlThread(current);
+				links.remove(current);
 			    p.start();
 			}else{
 				links.remove(current);
@@ -169,7 +170,6 @@ public class CrawlEng {
         public void run() {
             synchronized(links){
             	crawl(cur);
-            	links.remove(cur);
             	System.out.println("Crawling and  "+ links.size()+" qued");
             }
         }

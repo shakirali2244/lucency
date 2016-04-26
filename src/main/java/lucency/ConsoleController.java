@@ -1,6 +1,7 @@
 package lucency;
 
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,16 +19,17 @@ import org.apache.commons.logging.LogFactory;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+@RequestMapping(value = "/console")
 public class ConsoleController implements Controller {
 
     protected final Log logger = LogFactory.getLog(getClass());
     
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response,@PathVariable String page)
             throws ServletException, IOException {
     	logger.info("Returning Console view");
         ModelAndView ret = new ModelAndView("console");
+        ret.addObject("page", page);
         return ret;
     }
     
@@ -49,6 +51,15 @@ public class ConsoleController implements Controller {
        return null;
     }
 
+	@Override
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+		 ModelAndView ret = new ModelAndView("console");
+	     ret.addObject("page", "main");
+	     return ret;
+	}
+
+	
 	
 
 }
