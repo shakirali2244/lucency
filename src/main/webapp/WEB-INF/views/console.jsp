@@ -1,3 +1,4 @@
+<%@page import="java.util.*"%> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,26 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+ 
+    <title> SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/console/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/resources/console/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="../dist/css/timeline.css" rel="stylesheet">
+    <link href="/resources/console/dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/resources/console/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="/resources/console/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/resources/console/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -372,26 +373,26 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
- 
-<jsp:include page="${page}" flush="true"/>
         
+<% String subPage = "/WEB-INF/views/templates/"+(String) request.getAttribute("page")+".jsp"; %>
+<jsp:include page ='<%=subPage%>'/>        
 
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/resources/console/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/resources/console/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/resources/console/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../bower_components/raphael/raphael-min.js"></script>
-    <script src="../bower_components/morrisjs/morris.min.js"></script>
-    <script src="../js/morris-data.js"></script>
+    <script src="/resources/console/bower_components/raphael/raphael-min.js"></script>
+    <script src="/resources/console/bower_components/morrisjs/morris.min.js"></script>
+    <script src="/resources/console/js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="/resources/console/dist/js/sb-admin-2.js"></script>
 
 </body>
 

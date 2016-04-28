@@ -42,7 +42,7 @@
         </div>
     </section>
 
-    <section class="bg-primary" id="about">
+    <!-- <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center">
@@ -62,5 +62,5 @@
             <hr>
             
         </div>
-    </section>
+    </section> -->
     <%@ include file="/WEB-INF/views/templates/footer.jsp" %>

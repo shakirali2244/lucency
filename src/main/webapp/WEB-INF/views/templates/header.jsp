@@ -53,9 +53,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
+                    <!-- <li>
                         <a class="page-scroll" href="#about">About</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
@@ -69,15 +69,13 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Call to action</h1>
-                <h3>Explain pitch idk</h3>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+
+        <div id="particles" class="header-content">
+            <div id="intro" class="header-content-inner">
+                <h1>Improve Your Web Presence</h1>
+                <h3>Suite of tools to improve your websites</h3>
+                <a href="#contact" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
                 <br><br>
-                <a href="#"><img id="headerimg" src="<c:url value="/resources/img/app-screen.png" />" alt="App Screen" style="max-width:100%; "></a>
+                <!-- <a href="#"><img id="headerimg" src="<c:url value="/resources/img/app-screen.png" />" alt="App Screen" style="max-width:100%; "></a> -->
             </div> 
         </div>
-
-    </header>
