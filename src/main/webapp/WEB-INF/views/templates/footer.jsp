@@ -37,8 +37,8 @@
 	<script> 
 	document.addEventListener('DOMContentLoaded', function () {
 		  particleground(document.getElementById('particles'), {
-		    dotColor: '#5cbdaa',
-		    lineColor: '#5cbdaa'
+		    dotColor: '#00FF00',
+		    lineColor: '#00FF00'
 		  });
 		}, false);
 		</script>
