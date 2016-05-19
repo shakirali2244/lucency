@@ -4,3 +4,4 @@
 .project
 **/bower_components/**
 src/main/webapp/WEB-INF/lib/crawler.jar
+/application.properties

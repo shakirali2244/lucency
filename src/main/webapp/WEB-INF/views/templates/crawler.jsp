@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -15,9 +16,11 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
+                                
                                     <form role="form" action="/console/url" method="post" >
                                         <div class="form-group">
                                             <label>URL</label>
+                                            <sec:csrfInput />
                                             <input class="form-control" id="url" name="url">
                                             <input type="submit" value="Submit">
                                             <p class="help-block">Enter URL to start Crawler with </p>

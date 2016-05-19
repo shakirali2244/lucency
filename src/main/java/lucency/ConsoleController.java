@@ -1,11 +1,11 @@
 package lucency;
 
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.Controller;
 
 import to.us.badgerworks.CrawlEng;
 
@@ -22,8 +22,9 @@ import org.apache.commons.logging.LogFactory;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+@Controller
 @RequestMapping(value = "/console")
-public class ConsoleController implements Controller {
+public class ConsoleController {
 
     protected final Log logger = LogFactory.getLog(getClass());
     
@@ -50,17 +51,17 @@ public class ConsoleController implements Controller {
     	CrawlEng a = new CrawlEng(tmp,"postgres");
     	a.crawlStart();
     	a.thread();
-    	
        return null;
     }
 
-	@Override
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
 		 ModelAndView ret = new ModelAndView("console");
 	     ret.addObject("page", "main");
 	     return ret;
 	}
+	
+	
 
 	
 	
