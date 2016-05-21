@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Lucency</a>
+                <a class="navbar-brand page-scroll" href="/">Lucency</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,10 +57,10 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li> -->
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="/#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="/contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -68,14 +68,3 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-
-        <div id="particles" class="header-content">
-            <div id="intro" class="header-content-inner">
-                <h1>Improve Your Web Presence</h1>
-                <h3>Suite of tools to improve your websites</h3>
-                <a href="#contact" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-                <br><br>
-                <!-- <a href="#"><img id="headerimg" src="<c:url value="/resources/img/app-screen.png" />" alt="App Screen" style="max-width:100%; "></a> -->
-            </div> 
-        </div>

@@ -31,11 +31,13 @@
     <artifactId>spring-security-config</artifactId>
     <version>4.1.0.RELEASE</version>
   </dependency>
+  <!-- for scanning base package annotations for routes -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context</artifactId>
 	    <version>4.2.6.RELEASE</version>
 	</dependency>
+	<!-- for csrf tags -->
 	<dependency>
 	    <groupId>org.springframework.security</groupId>
 	    <artifactId>spring-security-taglibs</artifactId>
@@ -47,22 +49,19 @@
     <artifactId>commons-dbcp2</artifactId>
     <version>2.1.1</version>
 </dependency>
-
-	
-	
-
 	<dependency>
     <groupId>javax.servlet</groupId>
 	    <artifactId>jstl</artifactId>
 	    <version>1.2</version>
 	</dependency>
-	<dependency>
-	<groupId>postgresql</groupId>
-	<artifactId>postgresql</artifactId>
-	<version>9.1-901-1.jdbc4</version>
-	</dependency>
+	<!-- http://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.4.1208.jre7</version>
+</dependency>
 	
-	
+
 <!--<dependency>
 	    <groupId>us.to.badgerworks</groupId>
 		    <artifactId>crawler</artifactId>

@@ -60,11 +60,6 @@ public class ConsoleController {
 	     ret.addObject("page", "main");
 	     return ret;
 	}
-	
-	
-
-	
-	
 
 }
 
