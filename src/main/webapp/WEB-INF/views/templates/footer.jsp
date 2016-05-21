@@ -1,13 +1,9 @@
-<section id="cta" class="bg-primary">
-        <div class="container">
-            <div class="row">
-            	<h1>Closing Impactful Statement</h1>
-            </div>
-            <div class="row">
-            	<a href="/contact" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
-        </div>
-        </section>
+<div id="footer">
+      <div class="container">
+        <h4 class="text-center"><a href="mailto:hello@getlucency.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> hello@getlucency.com</a></h4>
+      </div>
+</div>
+
         
           <!-- jQuery -->
     <script src="<c:url value="resources/js/jquery.js" />"></script>
@@ -26,8 +22,8 @@
 	<script> 
 	document.addEventListener('DOMContentLoaded', function () {
 		  particleground(document.getElementById('particles'), {
-		    dotColor: '#00FF00',
-		    lineColor: '#00FF00'
+		    dotColor: '#708090',
+		    lineColor: '#708090'
 		  });
 		}, false);
 		</script>

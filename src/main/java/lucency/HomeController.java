@@ -26,6 +26,14 @@ public class HomeController {
         return ret;
     }
     
+    @RequestMapping("/login")
+    public ModelAndView handleloginRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        logger.info("Returning Login view");
+        ModelAndView ret = new ModelAndView("login");
+        return ret;
+    }
+    
     @RequestMapping(path = "/contact", method = RequestMethod.GET)
     public ModelAndView handleContactRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

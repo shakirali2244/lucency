@@ -38,10 +38,10 @@
 </bean>
 
 
-<!-- <jdbc:initialize-database data-source="dataSource">
+<!--  jdbc:initialize-database data-source="dataSource">
   <jdbc:script location="schema.sql"/>
-</jdbc:initialize-database>
- -->
+</jdbc:initialize-database>-->
+ 
     <mvc:resources mapping="/resources/**" location="/resources/"  
 		cache-period="31556926"/>
     

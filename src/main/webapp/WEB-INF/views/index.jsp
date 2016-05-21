@@ -7,27 +7,33 @@
                 <!-- <a href="#"><img id="headerimg" src="<c:url value="/resources/img/app-screen.png" />" alt="App Screen" style="max-width:100%; "></a> -->
             </div> 
         </div>
-    <section id="services">
+    <section id="services" class="cross">
         <div class="container">
+	        <div class="row">
+	                 <div class="col-lg-12 text-center">
+	                     <h2 class="section-heading text-white">Services</h2>
+	                     <hr class="primary">
+	                 </div>
+	             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <div class="img-circle bg-primary">Benefit 1</div>
+                        <div class="img-circle text-white">Benefit 1</div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <div class="img-circle bg-primary">Analize your competitors</div>
+                        <div class="img-circle text-white">Analize your competitors</div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <div class="img-circle bg-primary">Benefit 3</div>
+                        <div class="img-circle text-white">Benefit 3</div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <div class="img-circle bg-primary">Benefit 4</div>
+                        <div class="img-circle text-white">Benefit 4</div>
                     </div>
                 </div>
             </div>
@@ -35,9 +41,11 @@
     </section>
     <section id="testimonial">
         <div class="container">
-            <div class="row centered">
-            <h2>"My time is important with lucency I can realize where it will time results." -French75</h2>
+            <div class="row text-center">
+            	<h2 class="text-white"><i>"My time is important with lucency I can realize where it will time results." </i></h2>
             </div>
+            <div class="row text-right">
+            	<h3 class="text-white">-<a href="https://www.instagram.com/thefrench_75/">@thefrench_75</a></h3>
         </div>
     </section>
     
@@ -62,4 +70,14 @@
     
         </div>
     </section> -->
+    <section id="cta">
+        <div class="container">
+            <div class="row">
+            	<h1>Closing Impactful Statement</h1>
+            </div>
+            <div class="row">
+            	<a href="/contact" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+            </div>
+        </div>
+        </section>
     <%@ include file="/WEB-INF/views/templates/footer.jsp" %>
