@@ -26,6 +26,54 @@ public class HomeController {
         return ret;
     }
     
+    @RequestMapping("/callback")
+   	public ModelAndView handleinstaAuthCode(){
+   		/*FileInputStream in = null;
+   		try {
+   			in = new FileInputStream("application.properties");
+   		} catch (FileNotFoundException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+   		Properties props = new Properties();
+   		try {
+   			props.load(in);
+   		} catch (IOException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+   		try {
+   			in.close();
+   		} catch (IOException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+
+   		FileOutputStream out = null;
+   		try {
+   			out = new FileOutputStream("application.properties");
+   		} catch (FileNotFoundException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+   		props.setProperty("ig1", "america");
+   		try {
+   			props.store(out, null);
+   		} catch (IOException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+   		try {
+   			out.close();
+   		} catch (IOException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}*/
+   		ModelAndView ret = new ModelAndView("console");
+   	     ret.addObject("page", "auth");
+   	     return ret;
+   	}
+    
     @RequestMapping("/login")
     public ModelAndView handleloginRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
