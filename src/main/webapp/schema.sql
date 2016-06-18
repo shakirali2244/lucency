@@ -21,6 +21,17 @@ WITH (
 ALTER TABLE link
   OWNER TO postgres;
   
+CREATE TABLE users
+(
+	id serial NOT NULL PRIMARY KEY,
+	insta_id integer UNIQUE
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE users
+  OWNER TO postgres;
+  
 CREATE TABLE ig_post 
 (
   id serial NOT NULL PRIMARY KEY,
@@ -36,7 +47,23 @@ CREATE TABLE ig_post
 );
 ALTER TABLE ig_post
   OWNER TO postgres;
-  
+
+CREATE TABLE ig_followers
+(
+ id serial NOT NULL PRIMARY KEY,
+ user_id integer, 
+ user_name character varying,
+ full_name character varying,
+ dp_url character varying,
+ followed_on timestamp,
+ parent_id integer REFERENCES users(insta_id) 
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE ig_followers
+  OWNER TO postgres;
+
 CREATE TABLE ig_location
 (
    id serial NOT NULL PRIMARY KEY,

@@ -119,6 +119,8 @@ public class ConsoleController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+		 RestHelper rh = new RestHelper();
+		System.out.println(rh.get())
 		 ModelAndView ret = new ModelAndView("console");
 	     ret.addObject("page", "main");
 	     return ret;
