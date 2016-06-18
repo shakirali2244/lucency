@@ -7,7 +7,7 @@ import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.GetMethod;
 
-class RestHelper{
+public class RestHelper{
 	public String get(String url){
 		// Create an instance of HttpClient.
 	    HttpClient client = new HttpClient();
