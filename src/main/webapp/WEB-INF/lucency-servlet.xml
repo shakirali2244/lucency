@@ -33,6 +33,10 @@
   class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="location" value="application.properties" />
 </bean> 
+
+<bean id="dataSourcelink" class="lucency.ScheduledTasks">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
     
 <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="${jdbc.driverClassName}"/>

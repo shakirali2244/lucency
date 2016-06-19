@@ -1,19 +1,45 @@
 package lucency;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
+import java.sql.Timestamp;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class ScheduledTasks {
-
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-
-    @Scheduled(fixedRate = 5000)
-    public void reportCurrentTime() {
+    private JdbcTemplate jdbcTemplate;
+    
+    public void setDataSource(org.apache.commons.dbcp2.BasicDataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+	@Scheduled(fixedRate = 5000)
+    public void getFollowers() {
     	RestHelper rh = new RestHelper();
-        System.out.println("test"+rh.get("https://api.instagram.com/v1/users/self/followed-by?access_token=2966688347.3b60e99.1744404d6bc544a7a13138789fe8610d"));
+    	String data = rh.get("https://api.instagram.com/v1/users/self/followed-by?access_token=2966688347.3b60e99.1744404d6bc544a7a13138789fe8610d");
+        System.out.println(data);
+        JSONObject obj = new JSONObject(data);
+        JSONArray arr = obj.getJSONArray("data");
+        java.util.Date date= new java.util.Date();
+      	Timestamp ts = new Timestamp(date.getTime());
+        for (int i = 0; i < arr.length(); i++){
+        	JSONObject object = arr.getJSONObject(i); 
+        	this.jdbcTemplate.update(
+                    "update ig_followers set (user_name,full_name,dp_url,followed_on) values (?,?,?,?) where"
+                    + " user_id = ? AND parent_id = ?;"
+                    + " insert into ig_followers (user_id,user_name,full_name,dp_url,followed_on,parent_id)"
+                    + " select ?,?,?,?,?,? "
+                    + " where not exists (select 1 from ig_followers where user_id = ? AND parent_id = ?",
+                    object.getString("username"),object.getString("full_name"),object.getString("profile_picture"),ts,
+                    object.getInt("id"),1,
+                    object.getInt("id"),object.getString("username"),object.getString("full_name"),
+                    object.getString("profile_picture"),ts,1,
+                    object.getInt("id"),1);
+        }
+        
     }
 }

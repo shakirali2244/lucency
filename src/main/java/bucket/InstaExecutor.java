@@ -34,7 +34,7 @@ public class InstaExecutor {
     }
 
     public void printMessages() {
-       taskExecutor.execute(new MessagePrinterTask());
+       taskExecutor.execute(new MessagePrinterTask("https://api.instagram.com/v1/users/self/followed-by?access_token=2966688347.3b60e99.1744404d6bc544a7a13138789fe8610d"));
     }
     
     @Scheduled(fixedDelay=5000)
