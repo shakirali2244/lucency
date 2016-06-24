@@ -3,6 +3,7 @@ package lucency;
 
 import java.sql.Timestamp;
 
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,7 +15,8 @@ import org.springframework.stereotype.Component;
 public class ScheduledTasks {
     private JdbcTemplate jdbcTemplate;
     
-    public void setDataSource(org.apache.commons.dbcp2.BasicDataSource dataSource) {
+    
+    public void setDataSource(BasicDataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 	@Scheduled(fixedRate = 5000)
@@ -29,15 +31,15 @@ public class ScheduledTasks {
         for (int i = 0; i < arr.length(); i++){
         	JSONObject object = arr.getJSONObject(i); 
         	this.jdbcTemplate.update(
-                    "update ig_followers set (user_name,full_name,dp_url,followed_on) values (?,?,?,?) where"
+                    "update ig_followers set user_name=?,full_name=?,dp_url=?,follower_till=? where"
                     + " user_id = ? AND parent_id = ?;"
-                    + " insert into ig_followers (user_id,user_name,full_name,dp_url,followed_on,parent_id)"
-                    + " select ?,?,?,?,?,? "
-                    + " where not exists (select 1 from ig_followers where user_id = ? AND parent_id = ?",
+                    + " insert into ig_followers (user_id,user_name,full_name,dp_url,followed_on,follower_till,parent_id)"
+                    + " select ?,?,?,?,?,?,? "
+                    + " where not exists (select 1 from ig_followers where user_id = ? AND parent_id = ?);",
                     object.getString("username"),object.getString("full_name"),object.getString("profile_picture"),ts,
                     object.getInt("id"),1,
                     object.getInt("id"),object.getString("username"),object.getString("full_name"),
-                    object.getString("profile_picture"),ts,1,
+                    object.getString("profile_picture"),ts,ts,1,
                     object.getInt("id"),1);
         }
         

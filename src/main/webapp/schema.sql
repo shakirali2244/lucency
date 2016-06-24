@@ -24,6 +24,9 @@ ALTER TABLE link
 CREATE TABLE users
 (
 	id serial NOT NULL PRIMARY KEY,
+	username UNIQUE character varying(32),
+	email UNIQUE character varying,
+	password character varying,
 	insta_id integer UNIQUE
 )
 WITH (
@@ -56,6 +59,7 @@ CREATE TABLE ig_followers
  full_name character varying,
  dp_url character varying,
  followed_on timestamp,
+ follower_till timestamp,
  parent_id integer REFERENCES users(insta_id) 
 )
 WITH (
